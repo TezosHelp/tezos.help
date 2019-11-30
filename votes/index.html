@@ -1,0 +1,300 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="tezos.help voting dashboard" />
+	<meta name="keywords"
+		content="tezos, tezos votes, tezos governance" />
+	<title>Vote stats</title>
+	<!-- Google Tag Manager -->
+	<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-5HXWSLF');</script>
+	<!-- End Google Tag Manager -->
+	<meta charset="utf-8" />
+	<meta name="description" content="Follow Tezos on-chain governance voting at tezos.help" />
+	<meta name="keywords" content="tezos, tezos help, tezos governance, tezos voting" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="./conseiljs.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="../assets/css/main.css" />
+	<link type="text/css" rel="stylesheet" href="extra.css" />
+	<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+</head>
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5HXWSLF" height="0" width="0"
+		style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<!-- Header -->
+	<header id="header">
+		<a href="../"><img class="logo-top" src="../assets/pictures/tezoshelplogo.bmp" alt="tezos.help"></a>
+
+
+		<div class="voteInfo">
+			<a href="#" id="left" class="disabled"><img class="arrow" src="../assets/pictures/arrow-left.svg"></a>
+			<span id="votingPeriod">__
+			</span>
+			<a href="#" id="right" class="disabled"><img class="arrow" src="../assets/pictures/arrow-right.svg"></a>
+		</div>
+		<!--
+				<div class="voteInfo"><a href="#" id="left" class="disabled">&#129092;</a> <span id="votingPeriod">__</span> <a href="#" id="right" class="disabled">&#129094;</a></div>
+				-->
+		<nav>
+			<ul>
+				<li><a class="rightMenu" id="h1" href="" onclick="return false;">Proposal vote</a></li>
+				<li><a class="rightMenu" id="h2" href="" onclick="return false;">Exploration vote</a></li>
+				<li><a class="rightMenu" id="h3" href="" onclick="return false;">Testing</a></li>
+				<li><a class="rightMenu" id="h4" href="" onclick="return false;">Promotion vote</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Main -->
+		<section id="main" class="wrapper">
+			<div class="inner">
+				<div class="row">
+					<h1 id="title" class="major 8u"></h1><BR>
+					<div class="countDown" style="display: none;"><img src="../assets/pictures/time-left.png"> <b><span
+								id="countDown"></span></b></div>
+					</p>
+				</div>
+
+
+				<!--
+						<h3 class="header-title mb-4" id="learn"> 
+							Learn more about bakers previous votes <a href="./history/index.html" class="learn">here</a>
+							
+						</h3>
+						-->
+				<div id="links">
+					<div class="row">
+						<div class="12u 12u$(medium)">
+							<ul class="actions">
+								<li><a href="../bakers-list" class="button fit small">Bakers Voting List</a></li>
+								<li><a href="#" id="graphLink" class="button fit small">Explore in Graph</a></li>
+								<li><a href="https://forum.tezosagora.org/c/proposals" target="_blank"
+										class="button fit small">Discuss proposals</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+
+				<!-- Proposal vote -->
+
+				<div id="p1" class="12u" style="display: none;">
+					<div class="table-wrapper 12u">
+						<table class="alt">
+							<thead>
+								<tr>
+									<th>Proposal</th>
+									<th>Upvotes</th>
+									<th>Percentage</th>
+								</tr>
+							</thead>
+							<tbody id="proposals">
+							</tbody>
+							<!--<tfoot>
+										<tr>
+											<td>Undecided</td>
+											<td class="unusedVotes"></td>
+											<td class="unusedPercentage"></td>
+										</tr>
+									</tfoot>-->
+						</table>
+					</div>
+					<!-- Recent votes -->
+					<div class="table-wrapper recentVotesContainer 12u">
+						<table class="alt">
+							<thead class="recentVotesHead">
+								<tr>
+									<th>Age</th>
+									<th>Voter</th>
+									<th>Upvotes</th>
+									<th>Proposal(s)</th>
+								</tr>
+							</thead>
+							<tbody class="loadVotes">
+								<div class="buttonholder">
+									<button type="button" class="btn btn-primary" onclick="return vote.clearQueue();">
+										Load new votes <span class="badge badge-light">4</span>
+									</button>
+								</div>
+								<!--<tr><td colspan="4">
+												<div class="12u 12u$(medium)">
+													<a href="" class="button fit" onclick="return vote.clearQueue();"></a>
+												</div>
+											</td></tr>-->
+							</tbody>
+							<tbody class="RecentVotes">
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- Testing vote -->
+				<div id="p2" class="12u" style="display: none;">
+					<div class="progress-container">
+						<div class="col-md-12">
+							<div id="progress1" class="progress">
+								<div class="bar-step" style="left: 80%">
+									<div class="label-txt">Supermajority</div>
+									<div class="label-percent">80%</div>
+									<div class="label-line"></div>
+								</div>
+								<div class="progress-bar" style="width: 0%;"></div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div id="progress2" class="progress">
+								<div class="bar-step" style="left: 80%">
+									<div class="label-txt">Quorum</div>
+									<div class="label-percent">80%</div>
+									<div class="label-line"></div>
+								</div>
+								<div class="progress-bar" style="width: 0%;"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<table class="alt 6u">
+							<thead>
+								<tr>
+									<th>Ballot</th>
+									<th>Votes</th>
+									<th>Percentage</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="a1">Yay</td>
+									<td class="a2"></td>
+									<td class="a3"></td>
+								</tr>
+								<tr>
+									<td class="b1">Nay</td>
+									<td class="b2"></td>
+									<td class="b3"></td>
+								</tr>
+								<tr>
+									<td class="c1">Pass</td>
+									<td class="c2"></td>
+									<td class="c3"></td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td>Supermajority</td>
+									<td class="g2"></td>
+									<td class="g3">80%</td>
+								</tr>
+							</tfoot>
+						</table>
+						<table class="alt 6u">
+							<thead>
+								<tr>
+									<th>Participation</th>
+									<th>Votes</th>
+									<th>Percentage</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="d1">Voted</td>
+									<td class="d2"></td>
+									<td class="d3"></td>
+								</tr>
+								<tr>
+									<td class="e1">Not voted</td>
+									<td class="e2"></td>
+									<td class="e3"></td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td>Quorum</td>
+									<td class="f2"></td>
+									<td class="f3"></td>
+								</tr>
+							</tfoot>
+						</table>
+						<!--
+							<div class="6u 12u$(medium)">
+								<a href="./graph" id="graphLink" target="_blank" class="button special fit">Explore in graph</a><BR>
+								</div>
+								-->
+					</div>
+					<div class="table-wrapper recentVotesContainer 12u">
+						<table class="alt u12">
+							<thead>
+								<tr>
+									<th>Age</th>
+									<th>Voter</th>
+									<th>Votes</th>
+									<th>Ballot</th>
+								</tr>
+							</thead>
+							<tbody class="loadVotes">
+
+								<div class="buttonholder">
+									<button type="button" class="btn btn-primary" onclick="return vote.clearQueue();">
+										Load new votes <span class="badge badge-light">5</span>
+									</button>
+								</div>
+							</tbody>
+
+
+
+
+
+							<!--
+									<tbody class="loadVotes">
+										<tr><td colspan="4">
+											<div class="12u 12u$(medium)">
+												<a href="" class="button fit" onclick="return vote.clearQueue();"></a>
+											</div>
+										</td></tr>
+									</tbody>
+									-->
+							<tbody class="RecentVotes">
+							</tbody>
+						</table>
+					</div>
+				</div>
+		</section>
+	</div>
+
+	<!-- Footer -->
+
+
+
+	<footer id="footer">
+		<div class="inner text-center">
+			<ul class="menu mt-5">
+				<li>&copy tezos.help, No rights reserved</li>
+				<li><a href="mailto:info@tezos.help" target="_blank">Contact</a></li>
+				<li>Powered by <a href="https://github.com/Cryptonomic/ConseilJS" target="_blank">ConseilJS</a>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script type="text/javascript" src="./known-bakers/bakers.json"></script>
+	<script type="text/javascript" src="./proposals.json"></script>
+	<script src="./vote.js"></script>
+	<script src="./index.js"></script>
+</body>
+
+</html>

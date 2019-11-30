@@ -1,0 +1,292 @@
+.header{
+    
+    background-color: #1E2732;
+    color: white;
+    padding-top: 2.5em;
+    padding-bottom: 3.75em;
+}
+
+.logo{
+    margin-left: 10em; 
+}
+.btn-add{
+	
+	color: white;
+    border-color: white;
+    border: 1px solid white !important;
+
+    background-color: transparent;
+	background-image: none;
+	border-radius: 15px;
+	font-size: 16px;
+	text-transform: none;
+    font-weight: bold;
+}
+.arrow{
+	width: 25px;
+    height: 28px;
+    padding-bottom: 3px;
+}
+.disabled {
+	pointer-events: none !important;
+}
+.disabled .arrow {
+	filter: invert(70%);
+}
+.back
+{
+    float: right;
+    margin-right: 10em;
+}
+body, #wrapper{
+	background-color: #133262 !important;
+}
+.vote, #result, #bakers {
+    border-style: solid;
+    border-width: 0px;
+}
+#result, #bakers, .dropdown {
+    margin-left: 10em !important;
+    margin-right: 10em !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+#helpItem.popoverdetails {
+    margin-top: 1em !important;
+}
+.dropdown button {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-size: 16px;
+    background-color: #133262 !important;
+    border: solid 1px rgba(255, 255, 255, 0.15) !important;
+    min-width: 220px;
+}
+.dropdown .dropdown-menu {
+    margin-top: 0em;
+    margin-bottom: 0em;
+    padding-top: 0em;
+    padding-bottom: 0em;
+    background-color: #133262 !important;
+    border: solid 1px rgba(255, 255, 255, 0.15) !important;
+    color: white;
+    min-width: 220px;
+}
+.dropdown .dropdown-menu button {
+    margin-top: 0em;
+    margin-bottom: 0em;
+    background-color: #133262 !important;
+    border: solid 1px rgba(255, 255, 255, 0.15) !important;
+    color: white;
+}
+.dropdown .dropdown-menu button:hover {
+    color: grey;
+}
+.container {
+    display: flex !important;
+    flex-flow: row wrap !important;
+    max-width: 100vw !important;
+    padding-left: 100px !important;
+    padding-right: 100px !important;
+    justify-content: space-between !important; 
+}
+#bakers table {
+    margin: 0 0 2em 0;
+    width: 100%;
+    border: solid 1px rgba(255, 255, 255, 0.15) !important;
+    border-left: 1px !important;
+    border-right: 1px !important;
+}
+table thead {
+    border: solid 0px rgba(255, 255, 255, 0.15) !important;
+}
+table thead tr {
+    border: solid 1px rgba(255, 255, 255, 0.15) !important;
+}
+table thead tr th {
+    border: solid 1px rgba(255, 255, 255, 0.15) !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+#titleWrapper {
+    position: absolute;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    margin-top: 2.25em;
+    left: 0px;
+    top: 0px;
+    width: 40vw;
+    z-index: 1 !important;
+}
+table tbody tr {
+    border: solid 1px rgba(255, 255, 255, 0.15) !important;
+    border-left: 0 !important;
+}
+table tbody tr td {
+    border: solid 1px rgba(255, 255, 255, 0.15) !important;
+    /*border-left: 0 !important;*/
+    border-right: 0 !important;
+    color: rgba(255, 255, 255, 0.65);
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 16px !important;
+    font-stretch: 100% !important;
+    vertical-align: middle !important;
+}
+table tbody tr td span {
+    vertical-align: middle !important;
+    min-height: 24px;
+}
+table tbody tr.even td {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+table tbody tr.odd td {
+    background-color: rgba(255, 255, 255, 0) !important;
+}
+
+table td {
+    padding: 0.75em 0.75em;
+}
+
+table th {
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 0 0.75em 0.75em 0.75em;
+    text-align: left;
+}
+
+
+table thead {
+    border-bottom: solid 2px rgba(255, 255, 255, 0.15);
+}
+
+table tfoot {
+    border-top: solid 2px rgba(255, 255, 255, 0.15);
+}
+.vote {
+    flex-basis: 25%;
+}
+tr {
+    font-family: "Times New Roman", Times, serif;
+}
+td {
+    border: 1px;
+}
+.nay {
+	color: #d75252;
+}
+.yay {
+	color: #5eb85f;
+}
+.grey {
+    color: grey;
+    font-style: italic !important;
+}
+.feather {
+    width: 24px;
+    height: 24px;
+    stroke: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
+  .feather-th {
+    width: 16px;
+    height: 16px;
+    stroke: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
+  ul { 
+    padding: 0px;
+    font-size: 1em;
+ }
+ li {
+    display: inline-block;
+    width: auto;
+    list-style: outside none none;
+    
+ }
+ a, a:link, a:visited, a:active {
+    color: white !important;
+  }
+  #footer a, #footer a:link, #footer a:visited, #footer a:active {
+    color: rgba(255, 255, 255, 0.15) !important;
+  }
+  a:hover {
+      color: rgba(255, 255, 255, 0.15) !important;
+  }
+  #footer a:hover {
+    color: white !important;
+}
+ #footer{
+	height: 6em;
+	background-color: #1E2732;
+    bottom: 0;
+    margin-top: auto;
+}
+#left, #right {
+    line-height: 28px !important;
+    height: 25px !important;
+}
+#footer ul li{
+	color: rgba(255, 255, 255, 0.15);
+    margin-top: 2.5em;
+    margin-left: 1.5em;
+    padding: 0 0 0 1.5em;
+    border-left: solid 1px rgba(255, 255, 255, 0.15);
+}
+#footer ul li:first-child {
+    border-left: 0;
+    margin: 0;
+    padding-left: 0;
+}
+
+#wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+    @media (max-width: 1500px) {
+        #result, #bakers, .dropdown {
+            margin-left: 5em !important;
+            margin-right: 5em !important;
+        }
+        .back {
+            margin-right: 5em;
+        }
+        .logo {
+            margin-left: 5em; 
+        }
+    }
+    @media (max-width: 1200px) {
+        #result, #bakers, .dropdown {
+            margin-left: 1em !important;
+            margin-right: 1em !important;
+        }
+        .back {
+            margin-right: 1em;
+        }
+        .logo {
+            margin-left: 1em; 
+        }
+    }
+  @media (max-width: 850px){
+    #titleWrapper {
+        position: relative;
+        z-index: 0 !important;
+        width: 90vw;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+    .header{
+        padding-bottom: 1.75em;
+        
+    }
+    #result, #bakers, .dropdown {
+        margin-left: 1em !important;
+        margin-right: 1em !important;
+    }
+}

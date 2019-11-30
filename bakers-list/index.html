@@ -1,0 +1,115 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="tezos.help voting dashboard" />
+    <meta name="keywords" content="tezos, bakers list, tezos bakers list, bakers voting list, tezos votes, tezos governance" />
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5HXWSLF');</script>
+    <!-- End Google Tag Manager -->
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./tablesorter/css/theme.bootstrap_4.css" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="../votes/conseiljs.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    </link>
+    <script src="./tablesorter/js/jquery.tablesorter.js"></script>
+    <script src="./tablesorter/js/jquery.tablesorter.widgets.js"></script>
+    <script src="https://kit.fontawesome.com/78d09d247c.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5HXWSLF" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="wrapper">
+        <div class="header">
+            <nav>
+                <div class="logo">
+                    <a href="../"><img class="logo-top" src="../assets/pictures/tezoshelplogo.bmp" alt="tezos.help"></a>
+                    <div class="back">
+                        <a href="../votes" class="btn btn-add btn-lg">Back to voting</a>
+                    </div>
+                </div>
+            </nav>
+            <div id="titleWrapper">
+                <center>
+                    <h1>Bakers voting list</h1>
+                    <span id="activeProposal"></span><BR>
+                    <a href="#" id="left" onclick="return left();"><img class="arrow"
+                            src="../assets/pictures/arrow-left.svg"></a>
+                    <span id="periodScope"></span>
+                    <a href="#" id="right" onclick="return right();"><img class="arrow"
+                            src="../assets/pictures/arrow-right.svg"></a>
+                </center>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Show known bakers
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                <button id="b1" class="dropdown-item" type="button">Show known bakers</button>
+                <button id="b2" class="dropdown-item" type="button">Show unknown bakers</button>
+                <div class="dropdown-divider"></div>
+                <button id="b3" class="dropdown-item" type="button">Show all bakers</button>
+            </div>
+            <span tabindex="-1" role="button" id="helpItem" class="popoverDetails float-right" data-toggle="popover"
+                data-html="true"
+                data-content="<b>Participation</b> - Percentage of used votes in <u>all ballot periods</u> where a baker have had the right to vote<BR><b>Voting speed</b> - How fast a baker vote on average in the ballot periods (0-100)"
+                title="">
+                <!--<svg class="feather help-circle"><image xlink:href="../assets/pictures/help-circle.svg#circle"/></svg>-->
+                <img class="feather help-circle" src="../assets/pictures/help-circle.svg#circle" />
+            </span>
+        </div>
+        <div id="bakers" class="table-wrapper">
+            <table class="table tablesorter table-bordered alt">
+                <thead>
+                    <tr>
+                        <th scope="col">Baker</th>
+                        <th scope="col">Rolls</th>
+                        <th scope="col">Proposal</th>
+                        <th id="exploration" scope="col">Exploration</th>
+                        <th id="promotion" scope="col">Promotion</th>
+                        <th scope="col">Participation</th>
+                        <th scope="col">Voting speed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="inner text-center">
+            <ul class="menu mt-5">
+                <li>&copy tezos.help, No rights reserved</li>
+                <li><a href="mailto:info@tezos.help" target="_blank">Contact</a></li>
+                <li>Powered by <a href="https://github.com/Cryptonomic/ConseilJS" target="_blank">ConseilJS</a>
+            </ul>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="../votes/known-bakers/bakers.json"></script>
+    <script type="text/javascript" src="../votes/proposals.json"></script>
+    <script src="./index.js?v2"></script>
+    <script src="../votes/vote.js?v2"></script>
+</body>
+
+</html>

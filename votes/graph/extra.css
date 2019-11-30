@@ -1,0 +1,46 @@
+.testingTitle {
+	font-family: "Open Sans", verdana, arial, sans-serif;
+	font-size: 17px !important;
+}
+#title {
+	display: inline-block;
+	width: 220px;
+}
+.top-menu-container {
+	position: absolute;
+	margin: 0 auto;
+	right: 50%;
+	top: 32px;
+	z-index: 6;
+}
+.top-menu-inner {
+	position: relative;
+	right: -50%;
+	z-index: 6;
+}
+.arrow {
+	filter: invert(100%);
+	width: 25px;
+    height: 25px;
+    /*padding-bottom: 3px;*/
+}
+.disabled {
+	pointer-events: none !important;
+}
+.disabled .arrow {
+	filter: invert(30%);
+}
+.back {
+	position: absolute;
+	margin: 0 auto;
+	top: 24px;
+	left: 80px;
+	z-index: 3;
+}
+.back a {
+	color: black !important;
+    border: 1px solid black !important;
+}
+.back a:hover {
+	color: grey !important;
+}

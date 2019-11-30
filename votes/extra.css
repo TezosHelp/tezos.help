@@ -1,0 +1,335 @@
+
+
+.bar-step {
+	margin-left: 5px;
+    position:absolute;
+	margin-top:-23px;
+	z-index:5;
+    font-size: 16px;
+	margin-left: 0px;
+}
+
+.label-txt {
+    float: left;
+	position: relative;
+	width: 100px;
+	text-align: right;
+	margin-left: -100;
+	margin-right: 5px;
+	
+}
+.label-percent {
+    float: right;
+	position: relative;
+    margin-left: 5px; 
+	width: 100px;
+	margin-right: -100px;
+}
+.label-line {
+    float: left;
+    background: #000;
+    height:21px;
+	width:1px;
+	margin-top: 23px;
+	
+}
+.progress {
+	margin-left: -10px;
+	margin-right: -20px;
+	margin-bottom: 1.6em;
+}
+.progress-bar {
+	font-size: 16px;
+	margin-left: 0px;
+}
+.rightMenu {
+	cursor: default;
+	text-decoration: none !important;
+}
+.rightMenu.link, .rightMenu:hover:not(.active), .rightMenu:active:not(.active), .rightMenu.visited {
+	text-decoration: none !important;
+	color: rgba(255, 255, 255, 0.35) !important;
+}
+#countDown {
+	display: table-cell;
+	vertical-align: middle;
+	line-height: 30px;
+}
+.nay {
+	color: #d75252;
+}
+.yay {
+	color: #5eb85f;
+}
+.buttonholder {
+	visibility: hidden;
+	margin-right: 50px;
+	color: white;
+    border-color: white;
+    background-color: transparent;
+	background-image: none;
+	border-radius: 15px;
+	font-size: 20px;
+	
+}
+.buttonholder  button {
+	margin-bottom: 0px;
+	border-radius: 15px !important;
+	background-color: #1E2732;
+	width: 20em;
+	font-size: 0.8em !important;
+}
+.buttonholder  button:hover {
+	background-color: #133262;
+}
+.buttonholder button:after {
+	border-radius: 15px !important;
+}
+#header {
+	display: flex;
+	background-color: #1E2732;
+}
+#header .title, #header .voteInfo, #header nav {
+	justify-content: space-between;
+}
+#header > .voteInfo {
+	text-align: right;
+	color: white;
+	width: 30%;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	min-width: 80px ;
+}
+#header nav{
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+#header > nav > ul > li {
+	margin-left: 2.75em !important;
+}
+.showpage{
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+body{
+	background-color: #133262;
+}
+
+#wrapper{
+	background-color: #133262;
+	min-height: 100%;
+}
+
+#footer{
+	height: 5em;
+	background-color: #1E2732;
+	bottom: 0;
+	
+}
+#footer ul li{
+	color: rgba(255, 255, 255, 0.15) !important;
+	margin-top: 2.5em;
+}
+
+a{
+	border: none;
+}
+.button.small {
+	width: 26em;
+	border-radius: 0 !important;
+	margin-bottom: 0px;
+	font-size: 0.5em !important;
+}
+.button.small:after {
+	border-radius: 0px !important;
+}
+.buttonholder{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+table tbody tr td {
+	color: rgba(255, 255, 255, 0.65);
+}
+.btn-primary{
+	height: 3em;
+	width: 10em;
+}
+
+li {
+	list-style-type: none;
+	display: inline;
+	
+}
+h1.major {
+	margin-bottom: 0.2em;
+}
+h1.major:after {
+	background-image: linear-gradient(to right, #121B25, #1F2731);
+}
+.header-title{
+	margin-left: 2.4em;
+}
+a.learn{
+	text-decoration: underline;
+}
+
+.arrow{
+	width: 25px;
+	height: 25px;
+}
+.voteInfo{
+	display: inline !important;
+}
+
+.small{
+	width: 30em;
+	
+}
+#left
+{
+	display: inline-block;
+}
+#right{
+	display: inline-block;
+}
+#votingperiod{
+	display: inline-block;
+	font-size: 1em !important;
+	vertical-align: middle;
+	margin-top: -0.5em !important;
+}
+/*
+@media all and (min-width: 800px) {
+	#header nav {
+		flex: 0.8;
+	}
+	#header > .voteInfo {
+		flex: 0.2;
+	}
+}
+@media all and (min-width: 1000px) {
+	#header nav {
+		flex: 0.65;
+	}
+	#header > .voteInfo {
+		flex: 0.35;
+	}
+}
+@media all and (min-width: 1350px) {
+	#header nav {
+		flex: 0.5;
+	}
+	#header > .voteInfo {
+		flex: 0.5;
+	}
+}
+@media all and (min-width: 1800px) {
+	#header nav {
+		flex: 0.45;
+	}
+	#header > .voteInfo {
+		flex: 0.5;
+	}
+}
+*/
+.chevron {
+	fill: rgba(255,255,255, 0.35) !important;
+}
+.voteInfo a {
+	border: none;
+	color: white;
+}
+.voteInfo .disabled {
+	pointer-events: none !important;
+}
+.disabled .arrow {
+	filter: invert(70%);
+}
+#learn{
+	margin-bottom: 2em;
+}
+@media (max-width: 1680px){
+	.votingPeriod{
+		font-size: 22px !important;
+		
+	}
+}
+
+@media (max-width: 1200px){
+	#header nav {
+		flex: 0.8;
+	}
+	#header > .voteInfo {
+		flex: 0.2;
+	}
+}
+@media (max-width: 900px){
+	#footer ul li{
+		color: white;
+		margin-top: 0.8em;
+	}
+	#header nav {
+		flex: 0.7;
+	}
+	#header > .voteInfo {
+		flex: 0.3;
+	}
+}
+
+
+@media (max-width: 760px){
+	.RecentVotes, #proposals {
+		font-size: 12px;
+
+	}
+}
+
+@media (max-width: 760px){
+	#header nav {
+		flex: 0.6;
+	}
+	#header > .voteInfo {
+		flex: 0.4;
+	}
+}
+
+@media (max-width: 580px){
+	#header {
+		padding-left: 5px;
+		padding-right: 5px;
+		padding-top: 8px;
+	}
+	.RecentVotes, #proposals{
+		font-size: 9px;
+
+	}
+	#footer ul li{
+		margin-top: 1em;
+		}
+		#footer{
+			height: 7.5em;
+		}
+
+}
+@media (max-width: 530px){
+	#header > .voteInfo {
+		display: block;
+	}
+}
+
+@media (max-width: 480px){
+	nav ul {
+		display: none;
+	}
+	.RecentVotes, #proposals{
+		font-size: 7px;
+
+	}
+	#header > .voteInfo {
+		float: right;
+		flex: 1;
+		margin-right: 10px;
+	}
+}

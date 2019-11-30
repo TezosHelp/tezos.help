@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="We help you navigate the world of Tezos - The self-amending crypto-ledger" />
+	<meta name="keywords"
+		content="tezos, tezos help, tezos websites, tezos resources, tezos organisations, tezos community, tezos block explorer, tezos wallet, tezos projects, tezos delegation, tezos staking, tezos learning, tezos baking, tezos blockchain, tezos libraries, tezos tools" />
+	<!-- Google Tag Manager -->
+	<script>(function (w, d, s, l, i) {
+		w[l] = w[l] || []; w[l].push({
+			'gtm.start':
+				new Date().getTime(), event: 'gtm.js'
+		}); var f = d.getElementsByTagName(s)[0],
+			j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+				'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-5HXWSLF');</script>
+	<!-- End Google Tag Manager -->
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments) };
+		gtag('js', new Date());
+		gtag('config', 'UA-106698684-2');
+	</script>
+	<title>tezos.help</title>
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
+
+	<!-- Icons -->
+	<link href="./assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+	<link href="./assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Theme CSS -->
+	<link type="text/css" href="./assets/css/argon.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./assets/css/all.min.css">
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<!--  social media icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5HXWSLF" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<div class="wrapper">
+		<div class="header flex-column">
+			<div class="header-content position-relative">
+				<div class="container">
+					<div class="row topholder">
+						<div class="logoholder col-6">
+							<a href="#"><img class="logo-top" src="./assets/pictures/tezoshelplogo.bmp" alt="tezos.help"
+									onclick="return false;"></a>
+						</div>
+						<div class="buttonholder col-6">
+							<button type="button" class="btn btn-add btn-lg" data-toggle="modal"
+								data-target="#addModal">ADD CONTENT</button>
+						</div>
+					</div>
+					<div class="row toptext">
+						<div class="col-12">
+							<h3 class="header-title mt-2 mb-5" id="slogan">
+								We help you navigate the world of Tezos <br>The self-amending crypto-ledger
+							</h3>
+						</div>
+					</div>
+					<div id="row latestNews">
+						<h2 class="latest mt-5 mb-6">Latest</h2>
+					</div>
+					<div class="row telenews justify-content-center">
+						<div class="col-md-6">
+							<div id="widget" class="newsholder"></div>
+						</div>
+						<div class="col-md-6">
+							<div class="newsholder" id="govinfo">
+								<h9 class="boxdescription text-center">Tezos governance</h9>
+								<a href="https://www.tezosagora.org" target="_blank" class="fas fa-home"
+									data-toggle="tooltip" data-placement="bottom" title="Tezos Agora"></a>
+								<a href="https://www.tezosagora.org/period" target="_blank" class="far fa-chart-bar"
+									data-toggle="tooltip" data-placement="bottom" title="Stats"></a>
+							</div>
+							<div class="newsholder" id="changes">
+								<h9 class="boxdescription text-center">tezos.help</h9>
+								<!--Insert latest-->
+							</div>
+						</div>
+					</div>
+					<!-- Large modal -->
+					<div class="modal fade" id="addModal" tabindex="-1" role="dialog"
+						aria-labelledby="myLargeModalLabel" aria-hidden="true">
+						<div id='recaptcha' class="g-recaptcha" data-sitekey="6Lc87rgUAAAAAGTk0mLBukN_QlURYxYOmDo-w7Mf"
+							data-callback="sendForm" data-size="invisible">
+						</div>
+						<div class="modal-dialog modal-dialog-centered">
+							<div class="modal-content">
+								<div class="modal-header text-center">
+									<h5 class="modal-title w-100">Add Content</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<div class="container-fluid">
+										<form class="was-validated">
+											<div class="form-row">
+												<div class="col-12 mb-2 mt-2">
+													<input name="entryId" id="entryId" type="hidden" />
+													<input type="text" class="form-control col-form-label-lg"
+														id="modalTitle" placeholder="Title" required>
+												</div>
+
+												<div class="col-12 mb-2">
+													<input type="url" class="form-control col-form-label-lg"
+														id="modalUrl" placeholder="Url" required>
+												</div>
+											</div>
+											<div class="form-group" id="categories">
+												<select id="modalCategory" class="custom-select custom-select-lg mb-2"
+													required>
+													<option value="" class="selectitem">Category</option>
+													<!--Insert categories-->
+												</select>
+											</div>
+											<div class="mb-3">
+												<textarea
+													class="form-control textarea-input is-invalid col-form-label-lg"
+													id="validationTextarea" placeholder="Description"
+													required></textarea>
+											</div>
+										</form>
+										<!-- Fields not required-->
+										<div class="form-row mb-2">
+											<div class="col-6">
+												<input type="text" class="form-control col-form-label-lg"
+													id="modalTwitter" placeholder="Twitter">
+											</div>
+
+											<div class="col-6 mb-2">
+												<input type="text" class="form-control col-form-label-lg"
+													id="modalFacebook" placeholder="Facebook">
+											</div>
+										</div>
+										<!-- Fields not required-->
+									</div>
+								</div>
+								<div id="status"></div>
+								<div class="modal-footer row text-center">
+									<div class="col-12 mb-2">
+										<button type="button" class="modal-send"
+											onclick="return validateForm()">Submit</button>
+									</div>
+									<div class="col-12">
+										<button type="button" class="modal-cancel" data-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid content py-4 clearfix">
+			<nav class="navbar navbar-expand mb-4 p-2">
+				<!--rounded-->
+				<ul class="navbar-nav" id="navigationbar">
+					<li class="nav-item">
+						<a href="#" id="featured" class="nav-link" data-filter=".featured">Featured</a>
+					</li>
+					<!--Insert filters-->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							More
+						</a>
+						<div class="dropdown-menu category-list" aria-labelledby="navbarDropdown">
+
+						</div>
+					</li>
+				</ul>
+			</nav>
+			<div class="grid">
+				<!--Insert cards-->
+			</div>
+		</div>
+		<footer class="footer w-100 h-100">
+			<div class="text-center my-5 footer-bottom">
+				<ul class="menu mt-5">
+					<li>&copy tezos.help, No rights reserved</li>&emsp;|&emsp;
+					<li><a href="https://twitter.com/TezosHelp" target="_blank">Twitter</a></li>&emsp;|&emsp;
+					<li><a href="mailto:info@tezos.help" target="_blank">Contact</a></li>
+
+				</ul>
+			</div>
+		</footer>
+
+		<a href="#" class="back-to-top bg-primary">
+			<i class="fas fa-angle-double-up"></i>
+		</a>
+	</div>
+	<!-- Core -->
+	<script src="./assets/vendor/jquery/jquery.min.js"></script>
+	<script src="./assets/vendor/popper/popper.min.js"></script>
+	<script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
+	<script src="./assets/js/argon.min.js"></script>
+
+	<!-- Theme JS -->
+	<script src="./assets/js/isotope.pkgd.min.js"></script>
+	<script src="./assets/js/script.js"></script>
+	<script src="./user/index.js"></script>
+
+	<!-- Governance -->
+	<script src="./votes/conseiljs.min.js"></script>
+	<script type="text/javascript" src="./votes/proposals.json"></script>
+	<script src="./votes/vote.js"></script>
+	<script src="./votes/voteFrame.js"></script>
+</body>
+
+</html>

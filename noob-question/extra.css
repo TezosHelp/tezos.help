@@ -1,0 +1,111 @@
+body{
+    background-color: #133262;
+    height: 100%;
+    position: relative;
+}
+
+
+#header{
+    background-color: #1E2732;
+    
+
+}
+h1.major:after {
+	background-image: linear-gradient(to right, #121B25, #1F2731);
+}
+#container3{
+    min-height: 100vh; /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 100px; /* height of your footer */
+}
+
+
+.logo-top{
+    margin-left: 140px;
+}
+
+#links
+{
+    margin-right: 140px;
+}
+header a {
+    border: none;
+}
+
+#footer{
+    
+    
+    background-color: #1E2732;
+    
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    color: white !important;
+           
+	
+    
+}
+
+.menu {
+    text-align: center;
+    bottom: 0;
+    color: white;
+    
+    
+}
+p{
+    vertical-align: middle;
+    top: 10px;
+}
+
+.res
+{
+    display: inline-block;
+    position: relative;
+    margin-left: 30px;
+  
+}
+.inner{
+    margin-top: 2em !important;
+}
+
+
+
+@media (max-width: 1000px){
+    .logo-top{
+        margin-left: 100px;
+    }
+    
+    #links
+    {
+        margin-right: 100px;
+    }
+}
+
+@media (max-width: 900px){
+    
+        .logo-top{
+            margin-left: 20px;
+        }
+        
+        #links
+        {
+            margin-right: 20px;
+        }
+        .derp{
+            display: inline-flex !important;
+            width: 45% !important;
+        }
+        .res{
+            float: right !important;
+        }
+        .\36 u\28small\29, .\36 u\24\28small\29 {
+            width: 50%;
+            clear: none;
+            margin-left: 0;
+        }
+    
+}
