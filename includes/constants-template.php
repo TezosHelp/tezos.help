@@ -5,6 +5,7 @@
     define("MYSQL_USER", "");
     define("MYSQL_PASSWORD", "");
     define("CAPTCHA_SECRET", "");
+    define("UPDATE_BAKERS_TOKEN", "");
     define("CATEGORIES", array( // Category name, variable name, # of featured cards
         array('Organisations', 'organisations', 4),
         array('Community', 'community', 3),

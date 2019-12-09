@@ -1,0 +1,13 @@
+[
+    {"pkh": "tz2KrmHRWu7b7Vr3GYQ3SJ41xaW64PiqWBYm", "name": "CF Baker"},
+    {"pkh": "tz3VEZ4k6a4Wx42iyev6i2aVAptTRLEAivNN", "name": "Foundation Baker 8", "logo": "https://www.tezos.help/assets/pictures/bakers_src/foundationbaker.jpg"},
+    {"pkh": "tz3WMqdzXqRWXwyvj5Hp2H7QEepaUuS7vd9K", "name": "Foundation Baker 7", "logo": "https://www.tezos.help/assets/pictures/bakers_src/foundationbaker.jpg"},
+    {"pkh": "tz3UoffC7FG7zfpmvmjUmUeAaHvzdcUvAj6r", "name": "Foundation Baker 6", "logo": "https://www.tezos.help/assets/pictures/bakers_src/foundationbaker.jpg"},
+    {"pkh": "tz3NExpXn9aPNZPorRE4SdjJ2RGrfbJgMAaV", "name": "Foundation Baker 5", "logo": "https://www.tezos.help/assets/pictures/bakers_src/foundationbaker.jpg"},
+    {"pkh": "tz3bTdwZinP8U1JmSweNzVKhmwafqWmFWRfk", "name": "Foundation Baker 4", "logo": "https://www.tezos.help/assets/pictures/bakers_src/foundationbaker.jpg"},
+    {"pkh": "tz3RB4aoyjov4KEVRbuhvQ1CKJgBJMWhaeB8", "name": "Foundation Baker 3", "logo": "https://www.tezos.help/assets/pictures/bakers_src/foundationbaker.jpg"},
+    {"pkh": "tz3bvNMQ95vfAYtG8193ymshqjSvmxiCUuR5", "name": "Foundation Baker 2", "logo": "https://www.tezos.help/assets/pictures/bakers_src/foundationbaker.jpg"},
+    {"pkh": "tz3RDC3Jdn4j15J7bBHZd29EUee9gVB1CxD9", "name": "Foundation Baker 1", "logo": "https://www.tezos.help/assets/pictures/bakers_src/foundationbaker.jpg"},
+    {"pkh": "tz1LWub69XbTxdatJnBkm7caDQoybSgW4T3s", "name": "TzScan Baker", "logo": "https://www.tezos.help/assets/pictures/bakers_src/tzscan.png"},
+    {"pkh": "tz1L5F33JZ9bsyRdSoshMujjZxdEzhwBHCDq", "name": "Kukai"}
+]

@@ -472,8 +472,12 @@ function pkh2alias(pkh) {
 }
 function getIcon(pkh) {
 	const index = mapOfPublicBakers.findIndex(b => b.pkh === pkh);
-	if (index >= 0 && mapOfPublicBakers[index].image)
-		return mapOfPublicBakers[index].image;
+	if (index >= 0 && mapOfPublicBakers[index].logo) {
+		const subfix = mapOfPublicBakers[index].logo.slice(-4);
+		if (subfix === '.jpg' || subfix === '.png') {
+			return "assets/pictures/bakers/" + mapOfPublicBakers[index].pkh + subfix;
+		}
+	}
 	return '';
 }
 function proposalHash2alias(hash, appendLink = false) {

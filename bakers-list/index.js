@@ -87,7 +87,7 @@ function right() {
         } else {
             periodIndex -= steps;
         }
-        if (periodList[periodIndex].type < 1 && periodIndex + 1 < periodList.length && periodList[periodIndex].votes.length === 0) {
+        if (periodList[periodIndex].type < 1 && periodIndex > 0 && periodIndex + 1 < periodList.length && periodList[periodIndex].votes.length === 0) {
             return right();
         }
         $("#bakers").find("table tbody").html('');

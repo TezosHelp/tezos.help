@@ -1,26 +1,47 @@
+let token = '';
 async function generateMap() { // update
-	let bakers = initBakers();
-	bakers = append(bakers, await mtbBakers());
-	bakers = append(bakers, await tzaBakers());
-	//bakers = append(bakers, await tzsBakers());
-	bakers = append(bakers, await bbBakers());
-	bakers = addIcons(bakers);
-	const count = "countOfPublicBakers = " + bakers.length + ";\n";
-	let bakersOut = "mapOfPublicBakers = [\n";
+	let args = window.location.search.substr(1);
+	if (args.length > 6 && args.slice(0, 6) === 'token=') {
+		token = args.slice(6);
+	}
+	const promises = [initBakers(), registryBakers(), bakingBadBakers(), myTezosBakers(), localBakers()];
+	const bakerSource = await Promise.all(promises)
+	const oldBakers = bakerSource[0];
+	let bakers = bakerSource[1];
+	bakers = append(bakers, bakerSource[2]);
+	bakers = append(bakers, bakerSource[3]);
+	bakers = append(bakers, bakerSource[4]);
+	diff = [];
+	for (b of bakers) {
+		if (!oldBakers.some(ob => ob.pkh === b.pkh)) {
+			diff.push(b);
+		} else if (b.logo || b.offchainData) {
+			const index = oldBakers.findIndex(ob => ob.pkh === b.pkh);
+			if (JSON.stringify(oldBakers[index]) !== JSON.stringify(b)) {
+				diff.push(b);
+			}
+		}
+	}
+	if (diff.length > 5) {
+		diff.length = 5;
+	}
+	bakers = diff;
+	await addBakers(diff);
+	let bakersOut = "";
 	for (var i = 0; i < bakers.length; i++) {
-		const image = bakers[i].image ? ', image: "' + bakers[i].image + '"' : '';
-		bakersOut += "{pkh: \"" + bakers[i].pkh + "\", name: \"" + bakers[i].name + "\"" + image + "}";
+		const logo = bakers[i].logo ? ', "logo": "' + bakers[i].logo + '"' : '';
+		bakersOut += "{\"name\": \"" + bakers[i].name + "\", \"pkh\": \"" + bakers[i].pkh + "\"" + logo + "}";
 		if (i + 1 < bakers.length) {
 			bakersOut += ",\n";
 		}
 	}
-	bakersOut += "\n];";
-	console.log(bakers);
-	$("#container").html(count + bakersOut);
+	$("#container").html(bakersOut);
 }
-function initBakers() {
-	console.log(mapOfPublicBakers);
-	return mapOfPublicBakers;
+async function initBakers() {
+	const d = await fetch('bakers.json').then(function (ans) {
+		return ans.json();
+	});
+	return d;
 }
 function addIcons(bakers) {
 	for (const i in bakers) {
@@ -31,78 +52,116 @@ function addIcons(bakers) {
 	}
 	return bakers;
 }
-function append(a, b) {// Yay
+function append(a, b) {
 	const c = a;
 	const initSize = a.length;
 	for (const baker of b) {
-		if (!a.some(a => a.pkh === baker.pkh)) {
+		if (!a.some(a => a.pkh === baker.pkh)) { // Add new baker
 			c.push(baker);
+		} else if (baker.logo) {
+			const index = a.findIndex(a => a.pkh === baker.pkh);
+			if (!a[index].logo) {
+				a[index].logo = baker.logo;
+			}
 		}
 	}
-	console.log(a.length + ' ' + initSize);
-	console.log('Added ' + (a.length - initSize) + ' bakers');
 	return c;
 }
-async function tzsBakers() {
-	const d = await fetch('https://api5.tzscan.io/v1/services').then(function(ans) {
-		return ans.json();
-	});
-	let bakers = [];
-	for (const b of d) {
-		if (b.address && b.address.slice(0,2) === 'tz') {
-			bakers.push({name: b.name, pkh: b.address});
-		}
-	}
-	console.log('tzscan: ' + bakers.length);
-	return bakers;
-}
-async function mtbBakers() {
-	const d = await fetch('https://api.mytezosbaker.com/v1/bakers/').then(function(ans) {
+async function myTezosBakers() {
+	const d = await fetch('https://api.mytezosbaker.com/v1/bakers/').then(function (ans) {
 		return ans.json();
 	});
 	let bakers = [];
 	for (const b of d.bakers) {
 		if (b.baker_name) {
-			bakers.push({name: b.baker_name, pkh: b.delegation_code});
+			bakers.push({ name: b.baker_name, pkh: b.delegation_code, logo: b.logo });
 		}
 	}
-	console.log('MTB: ' + bakers.length);
 	return bakers;
 }
-async function bbBakers() {
-	const d = await fetch('https://api.baking-bad.org/v1/aliases').then(function(ans) {
+async function bakingBadBakers() {
+	const d = await fetch('https://api.baking-bad.org/v1/aliases').then(function (ans) {
 		return ans.json();
 	});
 	let bakers = [];
 	for (const b of d) {
 		if (b.name) {
-			bakers.push({name: b.name, pkh: b.address});
+			bakers.push({ name: b.name, pkh: b.address, logo: 'https://api.baking-bad.org/logos/' + b.logo });
 		}
 	}
-	console.log('Baking Bad: ' + bakers.length);
 	return bakers;
 }
 async function tzaBakers(period = 19) {
-	const d1 = await fetch('https://www.tezosagora.org/api/v1/non_voters/' + period).then(function(ans) {
+	const d1 = await fetch('https://www.tezosagora.org/api/v1/non_voters/' + period).then(function (ans) {
 		return ans.json();
 	});
-	const d2 = await fetch('https://www.tezosagora.org/api/v1/ballots/' + period + '?limit=500' + period).then(function(ans) {
+	const d2 = await fetch('https://www.tezosagora.org/api/v1/ballots/' + period + '?limit=500' + period).then(function (ans) {
 		return ans.json();
 	});
 	let bakers = [];
 	for (const b of d1) {
 		if (b.name) {
-			bakers.push({name: b.name, pkh: b.pkh});
+			bakers.push({ name: b.name, pkh: b.pkh });
 		}
 	}
 	for (const b of d2.results) {
 		if (b.author.name) {
-			bakers.push({name: b.author.name, pkh: b.author.pkh});
+			bakers.push({ name: b.author.name, pkh: b.author.pkh });
 		}
 	}
-	console.log('Agora: ' + bakers.length);
 	return bakers;
 }
-$('document').ready(function(){
+async function registryBakers() {
+	const d = await getAllRegistryBakers('https://api.staging.tzstats.com', '17');
+	bakers = [];
+	const promises = [];
+	for (b of d) {
+		let offchainData = '';
+		if (b.bakerOffchainRegistryUrl && b.bakerOffchainRegistryUrl.slice(0, 4) === 'http') {
+			offchainData = b.bakerOffchainRegistryUrl;
+			promises.push(getOffchainImg(b, offchainData));
+		} else {
+			bakers.push({ name: b.bakerName, pkh: b.bakerAccount });
+		}
+	}
+	const offchainBakers = await Promise.all(promises);
+	bakers = bakers.concat(offchainBakers);
+	return bakers;
+}
+function getOffchainImg(b, offchainData) {
+	return new Promise(function (resolve, reject) {
+		$.get('./jsonProxy.php?target=' + offchainData, function (data) {
+			if (data && data.length > 4) {
+				if (data.slice(0, 4) === 'http' && (data.slice(data.length - 4, data.length) === '.png' || data.slice(data.length - 4, data.length) === '.jpg')) {
+					resolve({ name: b.bakerName, pkh: b.bakerAccount, logo: data });
+				}
+			}
+			resolve({ name: b.bakerName, pkh: b.bakerAccount });
+		}).catch(function() {
+			resolve({ name: b.bakerName, pkh: b.bakerAccount });
+		})
+	});
+}
+function addBakers(bakers) {
+	return new Promise(function (resolve, reject) {
+		$.post('./updateBakers.php', {token: token, data: JSON.stringify(bakers)}, function (data) {
+			if (data) {
+					resolve(data);
+			}
+			resolve('');
+		}).catch(function() {
+			resolve('');
+		})
+	});
+}
+async function localBakers() {
+	const d = await fetch('localBakerData.json').then(function (ans) {
+		return ans.json();
+	});
+	return d;
+}
+
+
+$('document').ready(function () {
 	generateMap();
 });
