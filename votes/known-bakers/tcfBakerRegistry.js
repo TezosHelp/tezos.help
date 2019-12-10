@@ -90,12 +90,14 @@ Current registry contract bigMapId: 17
 */
 function getAllRegistryBakers(indexerProvider, bigMapId) {
     return new Promise(function(resolve, reject) {
-    fetch(indexerProvider + '/explorer/bigmap/' + bigMapId + '/values?limit=100').then(function(res){
+        const path = indexerProvider + '/explorer/bigmap/' + bigMapId + '/values?limit=100';
+    fetch('tzstatsProxy.php?path=' + btoa(path)).then(function(res){
         if (!res.ok) {
             throw new Error("HTTP error, status = " + res.status);
         }
         res.json().then(function(data) {
-            fetch(indexerProvider + '/explorer/bigmap/' + bigMapId + '/values?limit=100&offset=100').then(function(res){
+            const path2 = indexerProvider + '/explorer/bigmap/' + bigMapId + '/values?limit=100&offset=100';
+            fetch('tzstatsProxy.php?path=' + btoa(path2)).then(function(res){
                 if (!res.ok) {
                     throw new Error("HTTP error, status = " + res.status);
                 }

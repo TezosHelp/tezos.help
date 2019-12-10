@@ -22,8 +22,8 @@ async function generateMap() { // update
 			}
 		}
 	}
-	if (diff.length > 5) {
-		diff.length = 5;
+	if (diff.length > 20) {
+		diff.length = 20;
 	}
 	bakers = diff;
 	await addBakers(diff);
@@ -35,7 +35,7 @@ async function generateMap() { // update
 			bakersOut += ",\n";
 		}
 	}
-	$("#container").html(bakersOut);
+	$("#container").append(bakersOut);
 }
 async function initBakers() {
 	const d = await fetch('bakers.json').then(function (ans) {
@@ -112,20 +112,25 @@ async function tzaBakers(period = 19) {
 	return bakers;
 }
 async function registryBakers() {
-	const d = await getAllRegistryBakers('https://api.staging.tzstats.com', '17');
+	const d = await getAllRegistryBakers('https://api.staging.tzstats.com', '17').catch(function (e) {
+		$("#container").append(e + " (tzstats.com)\n");
+		throw new Error(e);
+	});
 	bakers = [];
 	const promises = [];
-	for (b of d) {
-		let offchainData = '';
-		if (b.bakerOffchainRegistryUrl && b.bakerOffchainRegistryUrl.slice(0, 4) === 'http') {
-			offchainData = b.bakerOffchainRegistryUrl;
-			promises.push(getOffchainImg(b, offchainData));
-		} else {
-			bakers.push({ name: b.bakerName, pkh: b.bakerAccount });
+	if (d) {
+		for (b of d) {
+			let offchainData = '';
+			if (b.bakerOffchainRegistryUrl && b.bakerOffchainRegistryUrl.slice(0, 4) === 'http') {
+				offchainData = b.bakerOffchainRegistryUrl;
+				promises.push(getOffchainImg(b, offchainData));
+			} else {
+				bakers.push({ name: b.bakerName, pkh: b.bakerAccount });
+			}
 		}
+		const offchainBakers = await Promise.all(promises);
+		bakers = bakers.concat(offchainBakers);
 	}
-	const offchainBakers = await Promise.all(promises);
-	bakers = bakers.concat(offchainBakers);
 	return bakers;
 }
 function getOffchainImg(b, offchainData) {
@@ -137,19 +142,19 @@ function getOffchainImg(b, offchainData) {
 				}
 			}
 			resolve({ name: b.bakerName, pkh: b.bakerAccount });
-		}).catch(function() {
+		}).catch(function () {
 			resolve({ name: b.bakerName, pkh: b.bakerAccount });
 		})
 	});
 }
 function addBakers(bakers) {
 	return new Promise(function (resolve, reject) {
-		$.post('./updateBakers.php', {token: token, data: JSON.stringify(bakers)}, function (data) {
+		$.post('./updateBakers.php', { token: token, data: JSON.stringify(bakers) }, function (data) {
 			if (data) {
-					resolve(data);
+				resolve(data);
 			}
 			resolve('');
-		}).catch(function() {
+		}).catch(function () {
 			resolve('');
 		})
 	});
