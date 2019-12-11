@@ -38,7 +38,7 @@ async function generateMap() { // update
 	$("#container").append(bakersOut);
 }
 async function initBakers() {
-	const d = await fetch('bakers.json').then(function (ans) {
+	const d = await fetch('bakers.json?' + getTS()).then(function (ans) {
 		return ans.json();
 	});
 	return d;
@@ -135,7 +135,7 @@ async function registryBakers() {
 }
 function getOffchainImg(b, offchainData) {
 	return new Promise(function (resolve, reject) {
-		$.get('./jsonProxy.php?target=' + offchainData, function (data) {
+		$.get('./jsonProxy.php?target=' + btoa(offchainData), function (data) {
 			if (data && data.length > 4) {
 				if (data.slice(0, 4) === 'http' && (data.slice(data.length - 4, data.length) === '.png' || data.slice(data.length - 4, data.length) === '.jpg')) {
 					resolve({ name: b.bakerName, pkh: b.bakerAccount, logo: data });
@@ -165,8 +165,9 @@ async function localBakers() {
 	});
 	return d;
 }
-
-
+function getTS() {
+	return new Date().getTime();
+}
 $('document').ready(function () {
 	generateMap();
 });

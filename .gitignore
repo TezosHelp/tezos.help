@@ -1,1 +1,5 @@
 includes/constants.php
+votes/known-bakers/bakers.json
+votes/known-bakers/bakers.js
+**/.htaccess
+assets/pictures/bakers/*

@@ -13,7 +13,7 @@
     }
     foreach ($newBakers as $newBaker) {
         $key = array_search($newBaker->pkh, array_column($currentBakers, 'pkh'));
-        if ($key) {
+        if (is_int($key)) {
             $currentBakers[$key]->name = $newBaker->name;
             if (isset($newBaker->logo)) {
                 $currentBakers[$key]->logo = $newBaker->logo;

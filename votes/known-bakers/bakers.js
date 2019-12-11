@@ -21,21 +21,6 @@ const mapOfPublicBakers =
         "logo": "https:\/\/api.baking-bad.org\/logos\/ocryptopool.png"
     },
     {
-        "name": "Tez-Baking",
-        "pkh": "tz1LBEKXaxQbd5Gtzbc1ATCwc3pppu81aWGc",
-        "logo": "https:\/\/api.baking-bad.org\/logos\/tez-baking.png"
-    },
-    {
-        "name": "Stir Delegate",
-        "pkh": "tz1LH4L6XYT2JNPhvWYC4Zq3XEiGgEwzNRvo",
-        "logo": "https:\/\/api.baking-bad.org\/logos\/stirdelegate.png"
-    },
-    {
-        "name": "TezoSteam",
-        "pkh": "tz1LLNkQK4UQV6QcFShiXJ2vT2ELw449MzAA",
-        "logo": "https:\/\/api.baking-bad.org\/logos\/tezos-team.png"
-    },
-    {
         "name": "Dash Master",
         "pkh": "tz1Lc87p6zRaDwzJs9kHvdpm7XzeWE8QTwVB",
         "logo": "https:\/\/api.baking-bad.org\/logos\/dashmaster.png"
@@ -158,7 +143,7 @@ const mapOfPublicBakers =
     {
         "name": "XTZ Antipodes",
         "pkh": "tz1TcH4Nb3aHNDJ7CGZhU7jgAK1BkSP4Lxds",
-        "logo": "https:\/\/api.baking-bad.org\/logos\/xtz-antipodes.png"
+        "logo": "https:\/\/mytezosbaker.com\/uploads\/xtz_antipodes.png"
     },
     {
         "name": "XTZ Bakery II",
@@ -502,7 +487,7 @@ const mapOfPublicBakers =
     {
         "name": "Money every 3 days",
         "pkh": "tz1egbN6RK2bM5vt4aAZw6r9j4nL8z49bPdS",
-        "logo": "https:\/\/api.baking-bad.org\/logos\/money_every_3_days.png"
+        "logo": "https:\/\/moneyevery3days.com\/wp-content\/uploads\/2019\/12\/logo256.jpg"
     },
     {
         "name": "MyTezosBaking",
@@ -1047,7 +1032,7 @@ const mapOfPublicBakers =
     {
         "name": "YieldWallet.io",
         "pkh": "tz1Q8QkSBS63ZQnH3fBTiAMPes9R666Rn6Sc",
-        "logo": "https:\/\/mytezosbaker.com\/uploads\/YieldWallet-min.png"
+        "logo": "https:\/\/api.baking-bad.org\/logos\/yield_wallet.png"
     },
     {
         "pkh": "tz2KrmHRWu7b7Vr3GYQ3SJ41xaW64PiqWBYm",
@@ -1101,5 +1086,100 @@ const mapOfPublicBakers =
     {
         "pkh": "tz1L5F33JZ9bsyRdSoshMujjZxdEzhwBHCDq",
         "name": "Kukai"
+    },
+    {
+        "name": "Tezos Seoul",
+        "pkh": "tz1Kf25fX1VdmYGSEzwFy1wNmkbSEZ2V83sY",
+        "logo": "https:\/\/api.baking-bad.org\/logos\/tezos_seul.png"
+    },
+    {
+        "name": "Tezos Seoul",
+        "pkh": "tz1Kf25fX1VdmYGSEzwFy1wNmkbSEZ2V83sY",
+        "logo": "https:\/\/api.baking-bad.org\/logos\/tezos_seul.png"
+    },
+    {
+        "name": "Tezos Seoul",
+        "pkh": "tz1Kf25fX1VdmYGSEzwFy1wNmkbSEZ2V83sY",
+        "logo": "https:\/\/api.baking-bad.org\/logos\/tezos_seul.png"
+    },
+    {
+        "name": "Tezos Seoul",
+        "pkh": "tz1Kf25fX1VdmYGSEzwFy1wNmkbSEZ2V83sY",
+        "logo": "https:\/\/api.baking-bad.org\/logos\/tezos_seul.png"
+    },
+    {
+        "name": "Tezos Seoul",
+        "pkh": "tz1Kf25fX1VdmYGSEzwFy1wNmkbSEZ2V83sY",
+        "logo": "https:\/\/api.baking-bad.org\/logos\/tezos_seul.png"
+    },
+    {
+        "name": "Tezos Seoul",
+        "pkh": "tz1Kf25fX1VdmYGSEzwFy1wNmkbSEZ2V83sY",
+        "logo": "https:\/\/api.baking-bad.org\/logos\/tezos_seul.png"
+    },
+    {
+        "name": "Tezos Seoul",
+        "pkh": "tz1Kf25fX1VdmYGSEzwFy1wNmkbSEZ2V83sY",
+        "logo": "https:\/\/api.baking-bad.org\/logos\/tezos_seul.png"
+    },
+    {
+        "name": "Tezos Seoul",
+        "pkh": "tz1Kf25fX1VdmYGSEzwFy1wNmkbSEZ2V83sY",
+        "logo": "https:\/\/api.baking-bad.org\/logos\/tezos_seul.png"
+    },
+    {
+        "name": "Tezos Seoul",
+        "pkh": "tz1Kf25fX1VdmYGSEzwFy1wNmkbSEZ2V83sY",
+        "logo": "https:\/\/api.baking-bad.org\/logos\/tezos_seul.png"
+    },
+    {
+        "name": "Tezos Seoul",
+        "pkh": "tz1Kf25fX1VdmYGSEzwFy1wNmkbSEZ2V83sY",
+        "logo": "https:\/\/api.baking-bad.org\/logos\/tezos_seul.png"
+    },
+    {
+        "name": "Tezos Seoul",
+        "pkh": "tz1Kf25fX1VdmYGSEzwFy1wNmkbSEZ2V83sY",
+        "logo": "https:\/\/api.baking-bad.org\/logos\/tezos_seul.png"
+    },
+    {
+        "name": "Tezos Seoul",
+        "pkh": "tz1Kf25fX1VdmYGSEzwFy1wNmkbSEZ2V83sY",
+        "logo": "https:\/\/api.baking-bad.org\/logos\/tezos_seul.png"
+    },
+    {
+        "name": "Tezos Seoul",
+        "pkh": "tz1Kf25fX1VdmYGSEzwFy1wNmkbSEZ2V83sY",
+        "logo": "https:\/\/api.baking-bad.org\/logos\/tezos_seul.png"
+    },
+    {
+        "name": "Tezos Seoul",
+        "pkh": "tz1Kf25fX1VdmYGSEzwFy1wNmkbSEZ2V83sY",
+        "logo": "https:\/\/api.baking-bad.org\/logos\/tezos_seul.png"
+    },
+    {
+        "name": "Tezos Seoul",
+        "pkh": "tz1Kf25fX1VdmYGSEzwFy1wNmkbSEZ2V83sY",
+        "logo": "https:\/\/api.baking-bad.org\/logos\/tezos_seul.png"
+    },
+    {
+        "name": "Tez-Baking",
+        "pkh": "tz1LBEKXaxQbd5Gtzbc1ATCwc3pppu81aWGc",
+        "logo": "https:\/\/api.baking-bad.org\/logos\/tez-baking.png"
+    },
+    {
+        "name": "Tezos Seoul",
+        "pkh": "tz1Kf25fX1VdmYGSEzwFy1wNmkbSEZ2V83sY",
+        "logo": "https:\/\/api.baking-bad.org\/logos\/tezos_seul.png"
+    },
+    {
+        "name": "Stir Delegate",
+        "pkh": "tz1LH4L6XYT2JNPhvWYC4Zq3XEiGgEwzNRvo",
+        "logo": "https:\/\/api.baking-bad.org\/logos\/stirdelegate.png"
+    },
+    {
+        "name": "TezoSteam",
+        "pkh": "tz1LLNkQK4UQV6QcFShiXJ2vT2ELw449MzAA",
+        "logo": "https:\/\/api.baking-bad.org\/logos\/tezos-team.png"
     }
 ];

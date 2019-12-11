@@ -1,6 +1,6 @@
 <?php
 if (isset($_GET['target']) && $_GET['target']) {
-    $target = $_GET['target'];
+    $target = base64_decode($_GET['target']);
     $json = @file_get_contents($target);
     if ($json) {
         $obj = json_decode($json);
