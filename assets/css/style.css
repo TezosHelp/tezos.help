@@ -162,11 +162,6 @@ html,body {
 }
 .content .dropdown-item.active,
 
-.content .nav-item{
-	
-	
-}
-
 .content .nav-item .active.nav-link{
 	background-color: #ddd;
 	
@@ -221,6 +216,7 @@ html,body {
 	padding: 0 16px;
 	margin-bottom: 30px;
 	float: left;
+	visibility: hidden;
 }
 .grid .item:hover{
 	text-decoration: none;

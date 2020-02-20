@@ -14,14 +14,16 @@
     foreach ($newBakers as $newBaker) {
         $key = array_search($newBaker->pkh, array_column($currentBakers, 'pkh'));
         if (is_int($key)) {
-            $currentBakers[$key]->name = $newBaker->name;
+            $currentBakers[$key]->name = filter_var($newBaker->name, FILTER_SANITIZE_STRING);
             if (isset($newBaker->logo)) {
-                $currentBakers[$key]->logo = $newBaker->logo;
+                $currentBakers[$key]->logo = filter_var($newBaker->logo, FILTER_SANITIZE_URL);
             }
             echo "<BR>Update: ";
+            error_log(date("Y-m-d H:i:s") . " | Update: " . json_encode($newBaker) . "\n", 3, "log.txt");
         } else {
             array_push($currentBakers, $newBaker);
             echo "<BR>Add: ";
+            error_log(date("Y-m-d H:i:s") . " | Add: " . json_encode($newBaker) . "\n", 3, "log.txt");
         }
         print_r($newBaker);
         if (isset($newBaker->logo)) {

@@ -1,6 +1,5 @@
 $(document).ready(function () {
 	navbar();
-
 	$(window).resize(function () {
 		$(".nav-item").removeAttr("style")
 		$(".category-list").html(' ');
@@ -57,8 +56,9 @@ $(document).ready(function () {
 	});
 
 
-}), $(window).on("load", function () {
-	console.log('load');
+}), $(document).ready(function () {
+	console.log('ready');
+	$('.grid .item').css("visibility", "visible");
 	const initCat = $(".nav-link").first();
 	var $grid = $('.grid').masonry({
 		// options...
@@ -69,9 +69,7 @@ $(document).ready(function () {
 	var filterFns = {};
 	// bind filter button click
 	$('.navbar').on('click', 'a', function (e) {
-
 		e.preventDefault();
-
 		var filterValue = $(this).attr('data-filter');
 		// use filterFn if matches value
 		filterValue = filterFns[filterValue] || filterValue;
@@ -85,9 +83,9 @@ $(document).ready(function () {
 		}
 	});
 	// catch hash links
-	$(".content .grid").show();
 	const hash = $(location).attr('hash');
 	if (hash && $(".nav-item " + hash).length) {
+		console.log(hash.slice(1));
 		$(hash).trigger('click');
 	} else {
 		$('#featured').trigger('click');

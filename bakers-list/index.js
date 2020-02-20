@@ -77,7 +77,7 @@ function right() {
     $("#right").addClass("disabled");
     if (periodIndex > 0) {
         let steps = 0;
-        while (periodIndex - ++steps > 0) {
+        while (periodIndex - ++steps >= 0) {
             if (periodList[periodIndex - steps].type == 0 && steps > 1) {
                 break;
             }
@@ -197,7 +197,7 @@ function handleVotes() {
                     //console.log(periodList);
                     const index2 = periodList[i].bakers.findIndex(a => a.pkh === votes.bakers[baker].pkh);
                     if (index2 !== -1) { // Skipped voting
-                        if (periodList[i].type !== 0) {
+                        if (periodList[i].type !== 0 && periodList[i].lastBlock !== 'head') {
                             if (!periodList[i].remainingPeriodBlocks) {
                                 ballotMaxVotes += currentRolls;
                             }

@@ -2,4 +2,5 @@ includes/constants.php
 votes/known-bakers/bakers.json
 votes/known-bakers/bakers.js
 **/.htaccess
+**/log.txt
 assets/pictures/bakers/*

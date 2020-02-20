@@ -80,13 +80,13 @@ async function myTezosBakers() {
 	return bakers;
 }
 async function bakingBadBakers() {
-	const d = await fetch('https://api.baking-bad.org/v1/aliases').then(function (ans) {
+	const d = await fetch('https://api.baking-bad.org/v2/bakers').then(function (ans) {
 		return ans.json();
 	});
 	let bakers = [];
 	for (const b of d) {
 		if (b.name) {
-			bakers.push({ name: b.name, pkh: b.address, logo: 'https://api.baking-bad.org/logos/' + b.logo });
+			bakers.push({ name: b.name, pkh: b.address, logo: b.logo });
 		}
 	}
 	return bakers;
@@ -140,6 +140,8 @@ function getOffchainImg(b, offchainData) {
 				if (data.slice(0, 4) === 'http' && (data.slice(data.length - 4, data.length) === '.png' || data.slice(data.length - 4, data.length) === '.jpg')) {
 					resolve({ name: b.bakerName, pkh: b.bakerAccount, logo: data });
 				}
+			} else {
+			console.warn("No logo found for " + b.bakerName + ": " + offchainData);
 			}
 			resolve({ name: b.bakerName, pkh: b.bakerAccount });
 		}).catch(function () {
