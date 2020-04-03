@@ -1,5 +1,5 @@
 const conseilServerInfo = { url: 'https://conseil-prod.cryptonomic-infra.tech', apiKey: 'klassare' };
-const rpc = 'https://rpc.tzbeta.net';
+const rpc = 'https://mainnet.tezos.org.ua';
 async function newVotingPeriod(period) {
 	let head = await conseiljs.TezosConseilClient.getBlockHead(conseilServerInfo, 'mainnet');
     let lastBlock;
@@ -128,9 +128,9 @@ class Vote {
 			});
 	}
 	async getRollCount() {
-		/*
 		const bakers = await fetch(rpc + '/chains/main/blocks/' + this.lastBlock + '/votes/listings')
-			.then(function(ans) {return ans.json();});*/
+			.then(function(ans) {return ans.json();});
+		/* Stopped working
 		const platform = 'tezos';
 		const network = 'mainnet';
 		const entity = 'rolls';
@@ -139,6 +139,7 @@ class Vote {
 		transactionQuery = conseiljs.ConseilQueryBuilder.addPredicate(transactionQuery, 'block_level', conseiljs.ConseilOperator.EQ, [this.getLastBlock()], false);
 		transactionQuery = conseiljs.ConseilQueryBuilder.setLimit(transactionQuery, 5000);
 		const bakers = await conseiljs.ConseilDataClient.executeEntityQuery(conseilServerInfo, platform, network, entity, transactionQuery);
+		*/
 		let totalRolls = 0;
 		for (let i = 0; i < bakers.length; i++) {
 			totalRolls += bakers[i].rolls;
